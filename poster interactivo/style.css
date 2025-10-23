@@ -3,7 +3,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  flex-direction: column; 
+  gap: 24px; 
+  min-height: 100vh;
   margin: 0;
 }
 
@@ -77,8 +79,9 @@ body {
   }
 .bloque4 {
   top: 240px; 
-  left: 420px; z-index:3; 
-    }
+  left: 420px; 
+  z-index:3; 
+ }
 
 .clickable:hover {
   transform: scale(1.2);
@@ -113,4 +116,207 @@ body {
   transition: opacity 0.4s ease, transform 0.4s ease;
   opacity: 0;
   transform: scale(0.6);
+}
+
+body {
+  background-color: rgba(0, 51, 145, 0.945);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  gap: 24px; 
+  min-height: 100vh;
+  margin: 0;
+}
+
+.game-container {
+  position: relative;
+  width: 750px;
+  height: 500px;
+  overflow: hidden;
+  border: 5px solid #0000001a;
+  border-radius: 15px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 750px;
+  height: 500px;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.carro {
+  position: absolute;
+  width: 350px;
+  z-index: 2;
+  left: 235px; 
+  right: 0; 
+  bottom: 0;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; 
+  animation: movetubo 6s linear infinite;
+}
+
+.banderas {
+  position: absolute;
+  top: 15px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  z-index: 4; 
+  animation: movenube 4s ease-in-out infinite alternate;
+}
+.conoo1{ 
+     top: 250px;
+     width: 90px;
+     left: 100px;
+     z-index:3; 
+}
+.conoo2 {
+  top: 200px; 
+  width: 90px;
+  left: 330px; 
+  z-index:3; 
+ }
+.conoo3 {
+    top: 210px; 
+    width: 90px;
+    left: 450px; 
+    z-index:3;
+  }
+.conoo4 {
+  top: 210px; 
+  width: 90px;
+  left: 210px; 
+  z-index:3; 
+ }
+
+ score-board {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  background: rgb(0, 177, 74);
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  z-index: 5;
+}
+
+ @keyframes movebanderas {
+  0% { transform: translateX(-50%) translateX(-120px); }
+  50% { transform: translateX(-50%) translateX(120px); }
+  100% { transform: translateX(-50%) translateX(-120px); }
+}
+
+@keyframes movecarro {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+body {
+  background-color: rgba(0, 51, 145, 0.945);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  gap: 24px; 
+  min-height: 100vh;
+  margin: 0;
+}
+
+.game-container {
+  position: relative;
+  width: 750px;
+  height: 500px;
+  overflow: hidden;
+  border: 5px solid #0000001a;
+  border-radius: 15px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 750px;
+  height: 500px;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.cubo {
+  position: absolute;
+  top: 100px;
+  width: 100px;
+  z-index: 2;
+  left: 335px; 
+  right: 0; 
+  bottom: 0;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; 
+  animation: movetubo 1s linear infinite;
+}
+
+.chuzos {
+  position: absolute;
+  top: 350px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  z-index: 4; 
+  animation: movenube 4s ease-in-out infinite alternate;
+}
+.rollito1{ 
+     top: 65px;
+     width: 90px;
+     left: 55px;
+     z-index:3; 
+}
+.rollito2 {
+  top: 350px; 
+  width: 90px;
+  left: 100px; 
+  z-index:3; 
+ }
+.rollito3 {
+    top: 210px; 
+    width: 90px;
+    left: 450px; 
+    z-index:3;
+  }
+.rollito4 {
+  top: 210px; 
+  width: 90px;
+  left: 210px; 
+  z-index:3; 
+ }
+
+ score-board {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  background: rgb(0, 177, 74);
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  z-index: 5;
+}
+
+ @keyframes movecubo {
+  0% { transform: translateX(-50%) translateX(-120px); }
+  50% { transform: translateX(-50%) translateX(120px); }
+  100% { transform: translateX(-50%) translateX(-120px); }
+}
+
+@keyframes movechuzos {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
 }
