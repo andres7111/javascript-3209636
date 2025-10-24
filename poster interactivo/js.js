@@ -1,4 +1,4 @@
-
+//*Juego 1 //*
 const container = document.querySelectorAll('.game-container');
 
 container.forEach(container => {
@@ -18,7 +18,6 @@ container.forEach(container => {
     });
   });
 
-
   const nube = container.querySelector('.nube');
   const tubo = container.querySelector('.tubo');
 
@@ -35,9 +34,9 @@ container.forEach(container => {
   }
 });
 
+//*Juego 2//*
 
-
-const containers = document.querySelectorAll('.game-container');
+const containers = document.querySelectorAll('.game-container2');
 
 containers.forEach(container => {
   let score = 0;
@@ -73,8 +72,28 @@ containers.forEach(container => {
   }
 });
 
+//*Juego 3//*
 
-const cubo = container.querySelector('.cubo');
+const containerss3 = document.querySelectorAll('.game-containerss3');
+
+containerss3.forEach(container => {
+  let score = 0;
+  const scoreEl = container.querySelector('.score');
+  const clickableItems = container.querySelectorAll('.clickable');
+
+  clickableItems.forEach(item => {
+    item.addEventListener('click', () => {
+      score++;
+      if (scoreEl) scoreEl.textContent = score;
+
+      item.classList.add('fade-out');
+      setTimeout(() => {
+        item.style.display = 'none';
+      }, 450);
+    });
+  });
+
+  const cubo = container.querySelector('.cubo');
   const chuzos = container.querySelector('.chuzos');
 
   function toggleAnimation(el) {
@@ -85,8 +104,10 @@ const cubo = container.querySelector('.cubo');
   if (cubo) {
     cubo.addEventListener('click', () => toggleAnimation(cubo));
   }
-  if (carro) {
+  if (chuzos) {
     chuzos.addEventListener('click', () => toggleAnimation(chuzos));
-  };
+  }
+});
+
 
 
