@@ -15,6 +15,21 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => { if (getComputedStyle(el).opacity === '0') el.style.display = 'none'; }, 600);
   }
 
+  
+  function playSfxFor(el) {
+    if (!el || !el.dataset) return;
+    const audioId = el.dataset.audio;
+    if (!audioId) return;
+    const a = document.getElementById(audioId);
+    if (!a) return;
+    try {
+      a.currentTime = 0;
+      const p = a.play();
+      if (p && typeof p.then === 'function') p.catch(() => {});
+    } catch (e) {
+    }
+  }
+
 
   const scoreEl1 = document.querySelector('.section1 .score-board .score');
   let score1 = 0;
@@ -27,6 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
       b.dataset.counted = '1';
       score1 += 1;
       if (scoreEl1) scoreEl1.textContent = String(score1);
+      
+      playSfxFor(b);
       fadeOutAndHide(b);
     });
   });
@@ -45,6 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const val = parseInt(c.dataset.value || '1', 10);
       score2 += val;
       if (scoreEl2) scoreEl2.textContent = String(score2);
+      
+      playSfxFor(c);
       fadeOutAndHide(c);
     });
   });
@@ -63,6 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const val = parseInt(r.dataset.value || '1', 10);
       score3 += val;
       if (scoreEl3) scoreEl3.textContent = String(score3);
+      
+      playSfxFor(r);
       fadeOutAndHide(r);
     });
   });
@@ -101,4 +122,17 @@ document.addEventListener('DOMContentLoaded', () => {
       showEscena(idx);
     });
   });
+
+  
+  window.play = function() {
+    const audios = Array.from(document.querySelectorAll('audio'));
+    audios.forEach(a => {
+      try { const p = a.play(); if (p && typeof p.then === 'function') p.catch(() => {}); } catch (e) {}
+    });
+  };
+
+  window.pause = function() {
+    const audios = Array.from(document.querySelectorAll('audio'));
+    audios.forEach(a => { try { a.pause(); } catch (e) {} });
+  };
 });

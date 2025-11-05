@@ -14,10 +14,13 @@
   <img src="img/fondo.png" class="background" alt="Fondo 1">
   <img src="img/nube.png" class="nube animable" alt="Nube">
   <img src="img/tubo.png" class="tubo animable" alt="Tubo">
-  <img src="img/bloque.png" class="bloque clickable bloque-a" alt="Bloque A">
-  <img src="img/bloque.png" class="bloque clickable bloque-b" alt="Bloque B">
-  <img src="img/bloque.png" class="bloque clickable bloque-c" alt="Bloque C">
-  <img src="img/bloque.png" class="bloque clickable bloque-d" alt="Bloque D">
+  
+
+  <!-- Añadir data-audio a cada elemento clickeable: referencias a los <audio> definidos abajo -->
+  <img src="img/bloque.png" class="bloque clickable bloque-a" data-audio="sfx-bloque" alt="Bloque A">
+  <img src="img/bloque.png" class="bloque clickable bloque-b" data-audio="sfx-bloque" alt="Bloque B">
+  <img src="img/bloque.png" class="bloque clickable bloque-c" data-audio="sfx-bloque" alt="Bloque C">
+  <img src="img/bloque.png" class="bloque clickable bloque-d" data-audio="sfx-bloque" alt="Bloque D">
 
   <div class="score-board">PUNTOS: <span class="score">0</span></div>
   </div>
@@ -28,10 +31,12 @@
   <img src="img/carro.png" class="carro animable" alt="Carro">
 
   
-  <img src="img/conoo.png" class="conoo clickable conoo-1" alt="Cono 1">
-  <img src="img/conoo.png" class="conoo clickable conoo-2" alt="Cono 2">
-  <img src="img/conoo.png" class="conoo clickable conoo-3" alt="Cono 3">
-  <img src="img/conoo.png" class="conoo clickable conoo-4" alt="Cono 4">
+
+  <!-- data-audio para conos -->
+  <img src="img/conoo.png" class="conoo clickable conoo-1" data-audio="sfx-cono" alt="Cono 1">
+  <img src="img/conoo.png" class="conoo clickable conoo-2" data-audio="sfx-cono" alt="Cono 2">
+  <img src="img/conoo.png" class="conoo clickable conoo-3" data-audio="sfx-cono" alt="Cono 3">
+  <img src="img/conoo.png" class="conoo clickable conoo-4" data-audio="sfx-cono" alt="Cono 4">
 
   <div class="score-board">PUNTOS: <span class="score">0</span></div>
   </div>
@@ -42,10 +47,12 @@
   <img src="img/chuzos.png" class="chuzos animable" alt="Chuzos">
 
   
-  <img src="img/rollito.png" class="rollito clickable roll-1" alt="Rollito 1">
-  <img src="img/rollito.png" class="rollito clickable roll-2" alt="Rollito 2">
-  <img src="img/rollito.png" class="rollito clickable roll-3" alt="Rollito 3">
-  <img src="img/rollito.png" class="rollito clickable roll-4" alt="Rollito 4">
+
+  <!-- data-audio para rollitos -->
+  <img src="img/rollito.png" class="rollito clickable roll-1" data-audio="sfx-rollito" alt="Rollito 1">
+  <img src="img/rollito.png" class="rollito clickable roll-2" data-audio="sfx-rollito" alt="Rollito 2">
+  <img src="img/rollito.png" class="rollito clickable roll-3" data-audio="sfx-rollito" alt="Rollito 3">
+  <img src="img/rollito.png" class="rollito clickable roll-4" data-audio="sfx-rollito" alt="Rollito 4">
 
   <div class="score-board">PUNTOS: <span class="score">0</span></div>
   </div>
@@ -65,6 +72,22 @@
 
 
 
+
+
+<audio id="sfx-bloque" preload="auto">
+  <source src="sonidos/smb_coin.wav" type="audio/mpeg">
+  
+</audio>
+<audio id="sfx-cono" preload="auto">
+  
+  <source src="sonidos/Falling-object-sound-effect.mp3" type="audio/mpeg">
+
+</audio>
+<audio id="sfx-rollito" preload="auto">
+
+  <source src="sonidos/sieerra.mp3" type="audio/mpeg">
+
+</audio>
 
 <script src="js.js"></script>
 

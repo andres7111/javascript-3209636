@@ -283,8 +283,7 @@ body {
 
 
 .miniaturas { display: flex; 
-  justify-content: center;
-   gap: 10px; 
+  justify-content: center; gap: 10px; 
   margin-top: 12px; 
 }
 .miniatura { 
